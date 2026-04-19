@@ -1,0 +1,83 @@
+name: Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+env:
+  IS_CI: true
+
+jobs:
+  CheckTag:
+    runs-on: ubuntu-latest
+    outputs:
+      package_version: ${{ steps.check_tag.outputs.package_version }}
+    steps:
+      - name: Check package version
+        uses: actions/checkout@v6
+
+      - name: Check if tag version equals package.json version
+        id: check_tag
+        run: |
+          # check package.json version equals the tag version, if yes, skip release, if no, set output tag to the tag version
+          VERSION=${GITHUB_REF_NAME#v} # Extract version from tag name, removing the 'v' prefix
+          echo "Extracted version: $VERSION"
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          echo "Package version: $PACKAGE_VERSION"
+          if [ "$VERSION" = "$PACKAGE_VERSION" ]; then
+            echo "Tag version matches package.json version. Skipping release."
+            echo "package_version=" >> $GITHUB_OUTPUT
+          else
+            echo "Tag version does not match package.json version. Setting output tag."
+            echo "package_version=$PACKAGE_VERSION" >> $GITHUB_OUTPUT
+          fi
+
+  Release:
+    needs: CheckTag
+    name: Release
+    runs-on: ubuntu-latest
+    if: needs.CheckTag.outputs.package_version != ''
+    steps:
+      - name: Check out git repository
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Install Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Create git tag
+        uses: pkgdeps/git-tag-action@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_repo: ${{ github.repository }}
+          version: ${{ needs.CheckTag.outputs.package_version }}
+          git_commit_sha: ${{ github.sha }}
+          git_tag_prefix: 'v'
+
+      - name: Install Dependencies
+        run: pnpm install --workspace-root --frozen-lockfile
+
+      - name: Build src code
+        run: npm run build
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          # body_path: ./publish/changeLog.md
+          prerelease: false
+          draft: false
+          tag_name: v${{ needs.CheckTag.outputs.package_version }}
+          files: |
+            ./dist/*.tar.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
