@@ -46,9 +46,6 @@ jobs:
       - name: Check out git repository
         uses: actions/checkout@v6
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-
       - name: Install Node.js
         uses: actions/setup-node@v6
         with:
@@ -65,7 +62,7 @@ jobs:
           git_tag_prefix: 'v'
 
       - name: Install Dependencies
-        run: pnpm install --workspace-root --frozen-lockfile
+        run: corepack enable && npm install -g corepack@latest && pnpm install --workspace-root --frozen-lockfile
 
       - name: Build src code
         run: npm run build
