@@ -22,8 +22,8 @@ importers:
   packages/common:
     devDependencies:
       '@any-listen/extension-kit':
-        specifier: ^0.1.2
-        version: 0.1.2(@types/node@25.6.0)(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3)
+        specifier: ^0.1.6
+        version: 0.1.6(@types/node@25.6.0)(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3)
       '@types/node':
         specifier: ^25.6.0
         version: 25.6.0
@@ -41,8 +41,8 @@ importers:
         version: 2.0.3
     devDependencies:
       '@any-listen/extension-kit':
-        specifier: ^0.1.2
-        version: 0.1.2(@types/node@25.6.0)(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3)
+        specifier: ^0.1.6
+        version: 0.1.6(@types/node@25.6.0)(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3)
       '@types/node':
         specifier: ^25.6.0
         version: 25.6.0
@@ -55,8 +55,8 @@ importers:
 
 packages:
 
-  '@any-listen/extension-kit@0.1.2':
-    resolution: {integrity: sha512-vyej2DfndGbQKrvPB9HECMCgIVxWPX/VB5N87xbXaMIzCw+bB56j2GkFwoHoU6NiOSDvsAa5sBaaDxU5w5JbBg==}
+  '@any-listen/extension-kit@0.1.6':
+    resolution: {integrity: sha512-b3WXLMpZ+0oQcN+KZRsjcVfy4Su/pRQd44j7PucVbj952AUZFoAu3Z8zY63Aaozt23GV8Oe4OZjT7RBBbgqTYQ==}
     hasBin: true
     peerDependencies:
       eslint: ^9.39.4
@@ -1702,7 +1702,7 @@ packages:
 
 snapshots:
 
-  '@any-listen/extension-kit@0.1.2(@types/node@25.6.0)(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3)':
+  '@any-listen/extension-kit@0.1.6(@types/node@25.6.0)(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3)':
     dependencies:
       '@eslint/js': 9.39.4
       '@tsconfig/node24': 24.0.4
@@ -2074,8 +2074,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.58.2(typescript@6.0.3)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.58.2(typescript@6.0.3)
-      '@typescript-eslint/types': 8.58.2
+      '@typescript-eslint/tsconfig-utils': 8.59.2(typescript@6.0.3)
+      '@typescript-eslint/types': 8.59.2
       debug: 4.4.3
       typescript: 6.0.3
     transitivePeerDependencies:
@@ -2475,7 +2475,7 @@ snapshots:
   eslint-config-love@154.0.0(@typescript-eslint/parser@8.59.2(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3):
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.7.1(eslint@9.39.4)
-      '@typescript-eslint/utils': 8.58.2(eslint@9.39.4)(typescript@6.0.3)
+      '@typescript-eslint/utils': 8.59.2(eslint@9.39.4)(typescript@6.0.3)
       eslint: 9.39.4
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.59.2(eslint@9.39.4)(typescript@6.0.3))(eslint@9.39.4)
       eslint-plugin-n: 18.0.1(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3)
