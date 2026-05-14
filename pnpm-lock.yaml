@@ -22,8 +22,8 @@ importers:
   packages/common:
     devDependencies:
       '@any-listen/extension-kit':
-        specifier: ^0.1.6
-        version: 0.1.6(@types/node@25.6.0)(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3)
+        specifier: ^0.1.7
+        version: 0.1.7(@types/node@25.6.0)(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3)
       '@types/node':
         specifier: ^25.6.0
         version: 25.6.0
@@ -41,8 +41,8 @@ importers:
         version: 2.0.3
     devDependencies:
       '@any-listen/extension-kit':
-        specifier: ^0.1.6
-        version: 0.1.6(@types/node@25.6.0)(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3)
+        specifier: ^0.1.7
+        version: 0.1.7(@types/node@25.6.0)(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3)
       '@types/node':
         specifier: ^25.6.0
         version: 25.6.0
@@ -55,8 +55,8 @@ importers:
 
 packages:
 
-  '@any-listen/extension-kit@0.1.6':
-    resolution: {integrity: sha512-b3WXLMpZ+0oQcN+KZRsjcVfy4Su/pRQd44j7PucVbj952AUZFoAu3Z8zY63Aaozt23GV8Oe4OZjT7RBBbgqTYQ==}
+  '@any-listen/extension-kit@0.1.7':
+    resolution: {integrity: sha512-3V1rz0XgWO8XWPZrHNTDP3IJpLERpSkZhnO1Pvu13E6EVs5ZfUgAs0T1UfHcsbtAvpkAgQLT8+0Wa+z5vdz7aQ==}
     hasBin: true
     peerDependencies:
       eslint: ^9.39.4
@@ -1702,7 +1702,7 @@ packages:
 
 snapshots:
 
-  '@any-listen/extension-kit@0.1.6(@types/node@25.6.0)(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3)':
+  '@any-listen/extension-kit@0.1.7(@types/node@25.6.0)(eslint@9.39.4)(ts-declaration-location@1.0.7(typescript@6.0.3))(typescript@6.0.3)':
     dependencies:
       '@eslint/js': 9.39.4
       '@tsconfig/node24': 24.0.4
