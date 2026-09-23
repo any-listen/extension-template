@@ -18,9 +18,9 @@
   },
   "devDependencies": {
     "@any-listen/extension-kit": "^0.1.16",
-    "@types/node": "^25.6.0",
+    "@types/node": "^25.9.8",
     "eslint": "^9.39.4",
-    "oxfmt": "^0.44.0"
+    "oxfmt": "^0.70.0"
   },
   "engines": {
     "node": ">= 22"
