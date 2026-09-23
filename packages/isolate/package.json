@@ -17,7 +17,7 @@
     "message2call": "^2.0.3"
   },
   "devDependencies": {
-    "@any-listen/extension-kit": "^0.1.16",
+    "@any-listen/extension-kit": "^0.1.17",
     "@types/node": "^25.9.8",
     "eslint": "^9.39.4",
     "oxfmt": "^0.70.0"
